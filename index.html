@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY VIDEO COLLECTION</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .container {
+      position: relative;
+      padding: 20px;
+    }
+
+    .circle-frame {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 20px auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid white;
+      position: relative;
+    }
+
+    .circle-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .circle-frame::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      border-top: 3px solid white;
+      border-left: 3px solid white;
+    }
+
+    .watch-button {
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .watch-button:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    @media (max-width: 600px) {
+      .circle-frame {
+        width: 150px;
+        height: 150px;
+      }
+
+      .watch-button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background" id="background"></div>
+
+  <div class="container">
+    <div class="circle-frame">
+      <img src="485872616_1167809241754951_7834240292552616473_n.jpg" alt="Foto Koleksi" />
+    </div>
+    <button class="watch-button" onclick="window.location.href='https://www.profitableratecpm.com/e3nnyxig?key=3ee75b9327425fd5d36be64a6836835c'">
+        WATCH NOW
+    </button>
+  </div>
+
+  <script>
+    const background = document.getElementById("background");
+    const images = [
+      "20250331_164130.png",
+      "20250331_164257.png",
+      "489991242_1108751751056602_7868980432198360163_n.jpg",
+      "490103484_122244064748072653_7663356765507088763_n.jpg"
+    ];
+    let index = 0;
+
+    function changeBackground() {
+      background.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 5000);
+  </script>
+</body>
+</html>
